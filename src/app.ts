@@ -12,18 +12,18 @@ class App {
     this.interceptionError();
     connect();
   }
-  inicializeRoutes() {
+  private inicializeRoutes() {
     this.app.use("/events", this.eventRoutes.router);
   }
-  interceptionError() {
+  private interceptionError() {
     this.app.use(errorMiddleware);
   }
-  middlewaresInitialize() {
+  private middlewaresInitialize() {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }
   listen() {
-    this.app.listen(3300, () => console.log("Server is running"));
+    this.app.listen(3333, () => console.log("Server is running"));
   }
 }
 
